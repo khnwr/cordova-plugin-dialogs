@@ -165,7 +165,7 @@ public class Notification extends CordovaPlugin {
         Runnable runnable = new Runnable() {
             public void run() {
 
-                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
                 dlg.setMessage(message);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
@@ -205,7 +205,7 @@ public class Notification extends CordovaPlugin {
 
         Runnable runnable = new Runnable() {
             public void run() {
-                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
                 dlg.setMessage(message);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
@@ -292,10 +292,10 @@ public class Notification extends CordovaPlugin {
                 But for some android versions is not visible (for example 5.1.1). 
                 android.R.color.primary_text_light will make text visible on all versions. */
                 Resources resources = cordova.getActivity().getResources();
-                int promptInputTextColor = resources.getColor(android.R.color.primary_text_light);
+                int promptInputTextColor = resources.getColor(android.R.color.primary_text_dark);
                 promptInput.setTextColor(promptInputTextColor);
                 promptInput.setText(defaultText);
-                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+                AlertDialog.Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
                 dlg.setMessage(message);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
@@ -398,7 +398,7 @@ public class Notification extends CordovaPlugin {
         final CordovaInterface cordova = this.cordova;
         Runnable runnable = new Runnable() {
             public void run() {
-                notification.spinnerDialog = createProgressDialog(cordova); // new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+                notification.spinnerDialog = createProgressDialog(cordova); // new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
                 notification.spinnerDialog.setTitle(title);
                 notification.spinnerDialog.setMessage(message);
                 notification.spinnerDialog.setCancelable(true);
@@ -440,7 +440,7 @@ public class Notification extends CordovaPlugin {
         final CordovaInterface cordova = this.cordova;
         Runnable runnable = new Runnable() {
             public void run() {
-                notification.progressDialog = createProgressDialog(cordova); // new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+                notification.progressDialog = createProgressDialog(cordova); // new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
                 notification.progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 notification.progressDialog.setTitle(title);
                 notification.progressDialog.setMessage(message);
@@ -484,7 +484,7 @@ public class Notification extends CordovaPlugin {
     private AlertDialog.Builder createDialog(CordovaInterface cordova) {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+            return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
         } else {
             return new AlertDialog.Builder(cordova.getActivity());
         }
@@ -494,7 +494,7 @@ public class Notification extends CordovaPlugin {
     private ProgressDialog createProgressDialog(CordovaInterface cordova) {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         if (currentapiVersion >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            return new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+            return new ProgressDialog(cordova.getActivity(), AlertDialog.THEME_HOLO_DARK);
         } else {
             return new ProgressDialog(cordova.getActivity());
         }
